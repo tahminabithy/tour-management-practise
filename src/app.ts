@@ -3,6 +3,7 @@ import { userRouter } from "./modules/user/user.route"
 import { StatusCodes } from "http-status-codes";
 import { routerTour } from "./modules/tour/tour.route";
 import { bookingRouter } from "./modules/booking/booking.route";
+import { authRouter } from "./modules/auth/auth.router";
 
 const app = express()
 app.use(express.json());
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use('/v1/', userRouter)
 app.use('/v1', routerTour)
 app.use('/v1', bookingRouter)
+app.use('/v1', authRouter)
 
 app.get('/',(req,res)=>{
  res.send({
