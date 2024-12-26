@@ -11,7 +11,7 @@ const createBookingInDb= async(payload:Tbooking)=>{
         if(!tour){
             throw new Error("Tour not found")
         }
-            payload.totalPrice=tour.price*payload.bookedSlots, //calculating total price
+            payload.totalPrice=tour.price * payload.bookedSlots, //calculating total price
             payload.bookingStatus="pending"
         
         if(payload.bookedSlots > tour.availableSeats){

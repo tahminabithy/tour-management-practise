@@ -14,12 +14,14 @@ const bookingSchema= new Schema<Tbooking>({
     },
     bookedSlots:{
         type:Number,
-        required:[true,"bookedSlots is required"]
+        required:[true,"bookedSlots is required"],
+        max:[10,"you can book maximum 10 slots"]
     },
    bookingStatus:{
         type:String,
         enum:["pending","paid","cancelled"],
         default:"pending"
+
    },
     totalPrice:{
         type:Number,
