@@ -8,7 +8,7 @@ interface responseData<T>{
 }
 const sendResponse =<T>(res:Response,data:responseData<T>)=>{
     res.status(201).send({
-        status:true,
+        status:data.status,
         statusCode:data.statusCode,
         message:data.message,
         data:data.data
